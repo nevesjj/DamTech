@@ -23,5 +23,4 @@ public class Barragens implements Serializable {
     private String estado;
     @Column(name = "nome_barragens", nullable = false, unique = true, length = 50)
     private String nome_barragens;
-
 }
