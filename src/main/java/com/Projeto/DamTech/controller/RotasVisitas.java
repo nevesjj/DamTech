@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -26,5 +27,11 @@ public class RotasVisitas {
     public ResponseEntity<Visitas> obterVisita(@PathVariable Long id) {
         Optional<Visitas> visitas = servicosVisitas.buscarVisita(id);
         return ResponseEntity.status(200).body(visitas.get());
+    }
+
+    @GetMapping("/todas")
+    public ResponseEntity<List<Visitas>> obterTodasVisita() {
+        List<Visitas> visitas = servicosVisitas.buscarTodasVisita();
+        return ResponseEntity.status(200).body(visitas);
     }
 }

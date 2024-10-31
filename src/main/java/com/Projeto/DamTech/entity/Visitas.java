@@ -29,8 +29,7 @@ public class Visitas implements Serializable {
     @Column(name = "previsao_climatica", nullable = false, length = 20)
     private String previsao_climatica;
     @Column(name = "data_visita", nullable = false)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate data_visita;
-    @Column(name = "status", nullable = false, length = 20)
-    private String status;
+    private String data_visita;
+    @Column(name = "status_barragem", nullable = false, length = 20)
+    private String status_barragem;
 }
