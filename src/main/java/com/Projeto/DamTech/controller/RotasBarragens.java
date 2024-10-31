@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("v1/barragens")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*")
 public class RotasBarragens {
 
     private final ServicosBarragens servicosBarragens;
@@ -30,4 +32,9 @@ public class RotasBarragens {
         return ResponseEntity.status(200).body(barragens.get());
     }
 
+    @GetMapping("/todas")
+    public ResponseEntity<List<Barragens>> obterTodasBarragem() {
+        List<Barragens> barragens = servicosBarragens.buscarTodasBarragens();
+        return ResponseEntity.status(200).body(barragens);
+    }
 }

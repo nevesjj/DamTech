@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("v1/usuarios")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*")
 public class RotasUsuarios {
 
     private final ServicosUsuarios servicosUsuarios;
