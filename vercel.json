@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/main/java/com/Projeto/DamTech/DamTechApplication.java",
+      "use": "@vercel/spring-boot"
+    }
+  ],
+  "routes": [
+    {
+      "src": "(.*)",
+      "dest": "src/main/java/com/Projeto/DamTech/controller/RotasBarragens.java"
+    },
+    {
+      "src": "(.*)",
+      "dest": "src/main/java/com/Projeto/DamTech/controller/RotasUsuarios.java"
+    },
+    {
+      "src": "(.*)",
+      "dest": "src/main/java/com/Projeto/DamTech/controller/RotasVisitas.java"
+    }
+  ]
+}
